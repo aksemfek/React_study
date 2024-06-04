@@ -1,8 +1,9 @@
-
-import Header from "./components/Header"
-import Main from "./components/Main"
-import Footer from "./components/Footer"
-import Button from "./components/Button"
+import { Fragment } from "react";
+import { useState } from "react";
+// import Header from "./components/Header"
+// import Main from "./components/Main"
+// import Footer from "./components/Footer"
+// import Button from "./components/Button"
 // function Header() {
 //   return (
 //     <header>
@@ -19,24 +20,27 @@ import Button from "./components/Button"
 //   );
 // }
 
-function App() { // App 컴포넌트
-  const buttons={
-    text:"메일",
-    color:"green",
-    name:"리액트",
-    a:1,
-  };
+//const arr=[1,2];
 
-  return (
+  //const [one,two] =arr;
+
+  // const state=useState(); //배열반환 
+
+  // console.log(state);  //두개 요소 들어가 있는 배열형태[undefined, f()]
+
+  //                      //                            [새롭게 생성된 state값, state값 변경하는 함수
+
+function App() { // App 컴포넌트
+  const [state,setState] = useState(0);
+  console.log(state);
+
+  return(
     <>
-      <Header></Header>  
-      <Main></Main>
-      <Button {...buttons} ></Button>
-      <Button text={"웹툰"} ></Button>
-      <Button text={"카페"} >
-        <div>자식</div>
-      </Button>
-      <Footer></Footer>
+      <h2>{state}</h2>
+      <button onClick={() =>{
+        setState(state+1);
+      }}
+      >+</button>
     </>
   )
 }
