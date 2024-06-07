@@ -4,15 +4,15 @@
 //     isLogin: true,
 //   };
 
-//   return (
-//     <>
-//       {student.isLogin ? (
-//         <div>로그아웃</div>
-//       ) : (
-//         <div>로그인</div>
-//       )}
-//     </>
-//   )
+  // return (
+  //   <>
+  //     {student.isLogin ? (
+  //       <div>로그아웃</div>
+  //     ) : (
+  //       <div>로그인</div>
+  //     )}
+  //   </>
+  // )
 
 //   // if (student.isLogin) {
 //   //   return <div className="logout">로그아웃</div>;
@@ -35,6 +35,7 @@
 //   )
 // }
 import "./Main.css";
+
 const Main = () => {
   const student = {
     name: "홍길동",

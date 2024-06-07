@@ -1,0 +1,13 @@
+.App{
+    width: 300px;
+}
+
+body{
+  padding: 20px;
+}
+
+.App section{
+  background-color: aqua;
+  border: 1px solid yellow;
+  padding: 20px;
+}
