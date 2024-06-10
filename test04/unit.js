@@ -1,3 +1,41 @@
+let number = [1, 2, 3, 4, 5];
+
+let n = number.map(function (num) {
+    return num * num;
+})
+
+console.log(n);
+
+// 1. map : 배열의 모든 요소를 슌회하면서 각각 콜백함수를 실행하고 그 결과 값들을 모아서 새로운 배열로 반환
+
+let arr = [1, 2, 3];
+
+const result = arr.map((item, idx, arr) => {
+    return item * 2;
+})
+
+console.log(result);
+
+// 2. filter : 기존 배열에서 조건을 만족하는 요소들만 필터링해서 새로운 배열로 반환
+let arr1 = [
+    { name: "홍길동", id: "1" },
+    { name: "이길동", id: "2" },
+    { name: "박길동", id: "3" }
+];
+
+const a = arr1.filter(
+    (item) => item.name === "이길동"
+);
+console.log(a);
+
+// 3. join
+let m = ["hi", "react", "spring"];
+const m2 = m.join();
+console.log(m2)
+
+// 4. sort
+
+/*
 let arr = [1, 2, 3];
 
 // 1. 배열 구조 분해 할당
@@ -42,3 +80,5 @@ function fun(p1,p2,p3){
 }
 
 fun(...arr1);
+
+*/

@@ -10,8 +10,12 @@
     padding: 10px;
 }
 
+.Register input:focus{
+    outline: none;
+}
+
 .Register button{
-    width: 100x;
+    width: 80px;
     border: none;
     border-radius: 5px;
     background-color: skyblue;
