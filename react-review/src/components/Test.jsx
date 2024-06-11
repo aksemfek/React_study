@@ -65,8 +65,13 @@ const Test = () => {
     const [input, setInput] = useState('');
     const [nextId, setNextId] = useState(4);
 
+    const onDelete = id =>{
+        const nextNames=names.filter(name => name.id !== id);
+        setNames(nextNames);
+    }
+
     const nameList = names.map(name =>
-        <li key={name.id}> {name.text} </li>
+        <li key={name.id} onDoubleClick={() => onDelete(name.id) }> {name.text} </li>
     )
 
     const onChange =e =>{setInput(e.target.value)}
