@@ -2,7 +2,7 @@ import "./List.css"
 import Item from "./Item";
 import { useState } from "react";
 
-const List = ({ todos, onUpdate }) => {
+const List = ({ todos, onUpdate, onDelete }) => {
 
     const [search, setSearch] = useState("");
 
@@ -29,7 +29,7 @@ const List = ({ todos, onUpdate }) => {
             <div className="li">
                 {filterData2.map((todo) => { // 배열에 담길 값을 리스트 형태로 반복적으로 렌더링
                     // 리스트로 렌더링할 때 고융한 key 값이 있어야 한다.
-                    return <Item key={todo.id}{...todo} onUpdate={onUpdate}/>;
+                    return <Item key={todo.id}{...todo} onUpdate={onUpdate} onDelete={onDelete} />;
                 })}
             </div>
         </div>

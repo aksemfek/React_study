@@ -42,6 +42,12 @@ function App() {
     );
   }
 
+  // todos배열에서 targetId와 일치하는 id를 갖는 요소만 삭제한 배열
+  const onDelete = (targetId) => {
+    setTodos(todos.filter((todo) => todo.id != targetId));
+
+  }
+
   const onCreate = (content) => {
     const newTodo = {
       id: idState.current++,
@@ -57,7 +63,7 @@ function App() {
     <div className='App'>
       <Header />
       <Register onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} />
+      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
     </div>
   )
 }
