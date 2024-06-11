@@ -4,6 +4,7 @@ import './App.css'
 import Header from './components/Header'
 import Register from './components/Register'
 import List from './components/List'
+import Test from './components/Test'
 
 const copyData = [
   {
@@ -61,9 +62,10 @@ function App() {
 
   return (
     <div className='App'>
-      <Header />
+      <Test/>
+      {/* <Header />
       <Register onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} /> */}
     </div>
   )
 }
