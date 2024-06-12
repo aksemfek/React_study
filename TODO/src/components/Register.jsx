@@ -1,7 +1,11 @@
 import { useRef, useState } from "react";
 import "./Register.css";
+import { useContext } from "react";
+import { TodoListContext } from "../App"
 
-const Register = ({ onCreate }) => {
+const Register = () => {
+
+    const { onCreate } = useContext(TodoListContext)
 
     const [content, setContent] = useState("");
     const inputRef = useRef();

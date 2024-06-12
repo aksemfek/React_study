@@ -4,8 +4,9 @@ import './App.css'
 import Header from './components/Header'
 import Register from './components/Register'
 import List from './components/List'
-import Test from './components/Test'
 import { useReducer } from 'react'
+import { useCallback } from 'react'
+import { createContext } from 'react'
 
 const copyData = [
   {
@@ -44,6 +45,9 @@ function reducer(state, action) {
   }
 }
 
+// 외부에다 선언 -> 리렌더링될때마다 다시 생성될 필요가 없기 때문에 외부에 선언
+export const TodoListContext = createContext();
+
 function App() {
 
   const [todos, dispatch] = useReducer(reducer, copyData);
@@ -67,7 +71,7 @@ function App() {
 
   }
 
-  const onCreate = (content) => {
+  const onCreate = useCallback((content) => {
     dispatch({
       type: "create",
       data: {
@@ -78,14 +82,23 @@ function App() {
       }
     })
     // setTodos([newTodo, ...todos]); //추가하고자하는 값들이랑 기존의 todos배열 
-  };
+  }, []);
 
   return (
     <div className='App'>
 
       <Header />
-      <Register onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+      <TodoListContext.Provider
+        value={{
+          todos,
+          onCreate,
+          onUpdate,
+          onDelete
+        }}> 
+
+        <Register />
+        <List />
+      </TodoListContext.Provider>
     </div>
   )
 }
